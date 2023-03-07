@@ -1,0 +1,17 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="myproject.myproject.urls.app01" />
+          <option value="testproject.testproject.urls.testapp" />
+          <option value="testproject.testproject.urls.views" />
+          <option value="testproject.testapp.views.testapp" />
+          <option value="autotest.web_ui_auto.views.web_ui_auto" />
+          <option value="autotest.autotest.urls.web_ui_auto" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
