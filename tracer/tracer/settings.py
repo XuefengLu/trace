@@ -114,7 +114,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # 自己加的配置模板
-SMS = 0
+SMS = 66
 
 try:
     from .local_settings import *

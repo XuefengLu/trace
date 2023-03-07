@@ -1,7 +1,7 @@
 LANGUAGE_CODE = 'zh-hans'
 
 # settings.py没有的配置，自己加的
-SMS = 66
+SMS = 666
 
 DATABASES = {
     'default': {
