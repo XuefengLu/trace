@@ -6,7 +6,7 @@ SMS = 666
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
+        'NAME': 'tracer',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': '192.168.122.3',
