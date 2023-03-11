@@ -114,7 +114,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # 自己加的配置模板
-SMS = 666
+MAIL_USER = "feng@163.com"  # 用户名
+MAIL_PASS = "qweasd"  # 163授权码
+SENDER = "feng@163.com"  # 发送方
 
 try:
     from .local_settings import *
