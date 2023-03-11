@@ -22,3 +22,4 @@ def send_163_email(receivers, code):
         return {'message': '发送成功请查看邮箱'}
     except:
         return {'message': '发送失败请稍后再试'}
+
