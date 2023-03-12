@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from web.views import send_sms_single
 from web.views import send_email
+from web.views import register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('send/sms/', send_sms_single),
-    path('send/email/', send_email),
+    path('login/send/email/', send_email),
+    path('register/send/email/', send_email),
+    path('web/register', register),
 ]

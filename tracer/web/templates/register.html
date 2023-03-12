@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+          integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+    <title>注册</title>
+</head>
+<style>
+    .account{
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    .red{
+        color : red;
+    }
+</style>
+
+<body>
+
+<div class="account">
+    <h3>注册 <small>register account</small></h3>
+    <form class="form-horizontal">
+        {% for field in form %}
+        {% if field.name == 'code'%}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}">
+                <span class="red">*</span>{{ field.label }}：
+            </label>
+            <div class="clearfix">
+                <div class="col-md-6" style="padding-left:0;">{{field}}</div>
+                <div class="col-md-6"><input id="btnEmail" type="button" value="点击获取验证码" class="btn btn-default"></div>
+            </div>
+        </div>
+        {% else%}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}"><span class="red">*</span>{{ field.label }}：</label>
+            <!--            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">-->
+            {{field}}
+        </div>
+        {% endif %}
+        {% endfor %}
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn btn-primary">注 册</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+<style>
+    function sendCode(){
+        $('#btnEmail').click(function(){
+            var email = $('#id_email').val();
+            //发送ajax
+            $.ajax({
+                url:"http://127.0.0.1:8000/register/send/email/",
+                type:"GET",
+                data:{email:email, tpl:"web/register"},
+                success: function(res){
+                    console.log(res);
+                }
+            })
+        })
+    };
+</style>
+</html>

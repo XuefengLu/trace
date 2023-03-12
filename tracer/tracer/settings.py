@@ -118,6 +118,17 @@ MAIL_USER = "feng@163.com"  # 用户名
 MAIL_PASS = "qweasd"  # 163授权码
 SENDER = "feng@163.com"  # 发送方
 
+EMAIL_FORMAT = {
+    "login": 1,
+    "register": 2
+}
+
+# redis
+REDIS_HOST = '127.0.0.1'
+REDIS_PORT = 6379
+REDIS_PASSWORD = "123456"
+REDIS_ENCODING = 'utf-8'
+
 try:
     from .local_settings import *
 except ImportError:
